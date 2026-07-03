@@ -1,2 +1,1 @@
-def main() -> None:
-    print("Hello from happy-birthday-d-b-26!")
+"""3D heart visualization using parametric and implicit equations."""

@@ -7,7 +7,11 @@ authors = [
     { name = "seokbong131", email = "seokbong131@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "matplotlib>=3.11.0",
+    "numpy>=2.5.0",
+    "scikit-image>=0.26.0",
+]
 
 [project.scripts]
 happy-birthday-d-b-26 = "happy_birthday_d_b_26:main"

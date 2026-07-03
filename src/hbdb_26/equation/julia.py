@@ -10,6 +10,7 @@ def compute_heart_coordinates(
     u: float array of angular parameters in [0, 2 * pi] (like longitude)
     v: float array of angular parameters in [0, pi] (like latitude)
     """
+
     sin_v = np.sin(v)
 
     x = sin_v * (15 * np.sin(u) - 4 * np.sin(3 * u))

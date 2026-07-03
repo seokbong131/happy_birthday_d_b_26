@@ -11,6 +11,7 @@ def evaluate_heart_implicit_function(x: np.ndarray, y: np.ndarray, z: np.ndarray
     f = 0 => surface of the heart
     f < 0 => inside the heart
     """
+
     x_square = x * x
     y_square = y * y
     z_square = z * z

@@ -41,6 +41,12 @@ select = [
     "W",    # pycodestyle warnings
 ]
 
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = [
+    "hbdb_26.util.configuration.JuliaConfig",
+    "hbdb_26.util.configuration.TaubinConfig"
+]
+
 [tool.ruff.lint.isort]
 known-first-party = ["hbdb_26"]
 

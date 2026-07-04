@@ -9,8 +9,6 @@ from hbdb_26.util.configuration import JuliaConfig, TaubinConfig
 def make_julia_heart(config: JuliaConfig = JuliaConfig()) -> HeartPointGrid:
     """
     Sample Julia's heart curve parametric equation over a (u, v) grid.
-
-    The returned grid follows the Z-up rendering convention.
     """
 
     # [start, stop] -> evenly spaced samples
@@ -21,9 +19,7 @@ def make_julia_heart(config: JuliaConfig = JuliaConfig()) -> HeartPointGrid:
     u, v = np.meshgrid(u_steps, v_steps, indexing="ij")
     x, y, z = julia.compute_heart_coordinates(u, v)
 
-    # Rotate +90 degrees around the X-axis.
-    # reference equation: Y-up / rendering convention: Z-up
-    return HeartPointGrid(x=x, y=-z, z=y)
+    return HeartPointGrid(x=x, y=y, z=z)
 
 
 def make_taubin_heart(config: TaubinConfig = TaubinConfig()) -> HeartTriangleMesh:

@@ -7,8 +7,8 @@ def evaluate_heart_implicit_function(x: np.ndarray, y: np.ndarray, z: np.ndarray
     """
     Implicit: f(x, y, z) = term_1 - term_2 - term_3.
 
-    f > 0 => outside the heart
-    f = 0 => surface of the heart
+    f > 0 => outside the heart,
+    f = 0 => surface of the heart,
     f < 0 => inside the heart
     """
 

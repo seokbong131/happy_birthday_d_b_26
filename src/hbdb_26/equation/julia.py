@@ -7,7 +7,7 @@ def compute_heart_coordinates(
     u: np.ndarray, v: np.ndarray
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     """
-    u: float array of angular parameters in [0, 2 * pi] (like longitude)
+    u: float array of angular parameters in [0, 2 * pi] (like longitude),
     v: float array of angular parameters in [0, pi] (like latitude)
     """
 

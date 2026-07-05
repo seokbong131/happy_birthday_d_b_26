@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
-from hbdb_26.renderer import visualize_point_grid, visualize_triangle_mesh
 from hbdb_26.scene import make_julia_heart, make_taubin_heart
+from hbdb_26.visualizer import visualize_point_grid, visualize_triangle_mesh
 
 
 def i_love_d_b() -> None:

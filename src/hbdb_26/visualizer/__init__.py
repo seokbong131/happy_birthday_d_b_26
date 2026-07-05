@@ -1,4 +1,4 @@
-from hbdb_26.renderer.matplotlib_visualizer import (
+from hbdb_26.visualizer.matplotlib import (
     visualize_point_grid,
     visualize_triangle_mesh,
 )

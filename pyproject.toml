@@ -1,6 +1,6 @@
 [project]
 name = "happy-birthday-d-b-26"
-version = "0.1.1"
+version = "1.0.0"
 description = "This is for you (1st present)"
 readme = "README.md"
 authors = [

@@ -1,50 +1,38 @@
-[project]
-name = "happy-birthday-d-b-26"
-version = "1.0.0"
-description = "This is for you (1st present)"
-readme = "README.md"
-authors = [
-    { name = "seokbong131", email = "seokbong131@gmail.com" }
-]
-requires-python = ">=3.14"
-dependencies = [
-    "matplotlib>=3.11.0",
-    "numpy>=2.5.0",
-    "scikit-image>=0.26.0",
-]
-
 [build-system]
-requires = ["uv_build>=0.11.26,<0.12.0"]
 build-backend = "uv_build"
+requires = ["uv_build>=0.11.26,<0.12.0"]
 
 [dependency-groups]
-dev = [
-    "ruff>=0.15.20",
-]
+dev = ["ruff>=0.15.20", "taplo>=0.9.3"]
+
+[project]
+authors = [{ name = "seokbong131", email = "seokbong131@gmail.com" }]
+dependencies = ["matplotlib>=3.11.0", "numpy>=2.5.0", "scikit-image>=0.26.0"]
+description = "This is for you (1st present)"
+name = "happy-birthday-d-b-26"
+readme = "README.md"
+requires-python = ">=3.14"
+version = "1.0.0"
 
 [tool.ruff]
 line-length = 100
-target-version = "py314"
-
-[tool.ruff.format]
-quote-style = "double"
 
 [tool.ruff.lint]
 select = [
-    "B",    # bugbear
-    "E",    # pycodestyle errors
-    "F",    # pyflakes
-    "I",    # isort
-    "N",    # pep8-naming
-    "SIM",  # simplify
-    "UP",   # pyupgrade
-    "W",    # pycodestyle warnings
+  "B",   # bugbear
+  "E",   # pycodestyle errors
+  "F",   # pyflakes
+  "I",   # isort
+  "N",   # pep8-naming
+  "SIM", # simplify
+  "UP",  # pyupgrade
+  "W",   # pycodestyle warnings
 ]
 
 [tool.ruff.lint.flake8-bugbear]
 extend-immutable-calls = [
-    "hbdb_26.util.configuration.JuliaConfig",
-    "hbdb_26.util.configuration.TaubinConfig"
+  "hbdb_26.util.configuration.JuliaConfig",
+  "hbdb_26.util.configuration.TaubinConfig",
 ]
 
 [tool.ruff.lint.isort]

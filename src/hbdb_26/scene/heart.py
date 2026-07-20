@@ -2,6 +2,8 @@ from dataclasses import dataclass
 
 import numpy as np
 
+type HeartGeometry = HeartPointGrid | HeartTriangleMesh
+
 
 @dataclass(frozen=True)
 class HeartPointGrid:

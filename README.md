@@ -48,11 +48,12 @@ TBD
 happy_birthday_d_b_26/
 ├── src/
 │   └── hbdb_26/
-│       ├── equation/ # heart curve & surface definition
-│       ├── scene/ # discretized heart geometry & object
-│       ├── util/ # TBD
-│       └── visualizer/ # matplotlib-based plotting
-└── main.py # entry point
+│       ├── application/    # composition root (injector)
+│       ├── equation/       # heart curve & surface definition
+│       ├── scene/          # discretized heart geometry & object
+│       ├── util/           # TBD
+│       └── visualizer/     # matplotlib-based plotting
+└── main.py                 # entry point (PyInstaller analysis script)
 ```
 
 ## ◦ Reference

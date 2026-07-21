@@ -18,13 +18,13 @@ TBD
 - GPU: NVIDIA GeForce GTX 1060 (6GB VRAM)
 - RAM: 16GB
 
-### - Software requirements
+### - Software specifications
 
 - OS: Windows 11 Home (Build 26200.7462)
 - Language: Python 3.14
 - Package Manager: uv
 - Library: Matplotlib, NumPy, scikit-image
-- Tool: Ruff
+- Tool: Ruff, Taplo
 
 ```bash
 # uv installation
@@ -48,7 +48,7 @@ TBD
 happy_birthday_d_b_26/
 ├── src/
 │   └── hbdb_26/
-│       ├── application/    # composition root (injector)
+│       ├── application/    # composition root (dependency injection)
 │       ├── equation/       # heart curve & surface definition
 │       ├── scene/          # discretized heart geometry & object
 │       ├── util/           # TBD
@@ -58,6 +58,7 @@ happy_birthday_d_b_26/
 
 ## ◦ Reference
 
+- [Dependency injection (Wikipedia)](https://en.wikipedia.org/wiki/Dependency_injection)
 - [Heart Curve (Wolfram MathWorld)](https://mathworld.wolfram.com/HeartCurve.html)
 - [Heart Surface (Wolfram MathWorld)](https://mathworld.wolfram.com/HeartSurface.html)
 - [Love heart jewelry I: 3D printing of parametric region (Wolfram Community)](https://community.wolfram.com/groups/-/m/t/2142619)

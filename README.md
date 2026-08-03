@@ -63,3 +63,4 @@ happy_birthday_d_b_26/
 - [Heart Surface (Wolfram MathWorld)](https://mathworld.wolfram.com/HeartSurface.html)
 - [Love heart jewelry I: 3D printing of parametric region (Wolfram Community)](https://community.wolfram.com/groups/-/m/t/2142619)
 - [Matplotlib — Visualization with Python](https://matplotlib.org/)
+- [Superquadrics and Angle-Preserving Transformations (IEEE CG&A, 1981)](https://www.cs.bilkent.edu.tr/~gudukbay/cs465/super_quadrics.pdf)

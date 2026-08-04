@@ -5,7 +5,7 @@ import numpy as np
 from hbdb_26.scene.parameter import HalfEllipse
 
 
-def sample_half_ellipse(half_ellipse: HalfEllipse, v: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+def compute_half_ellipse(half_ellipse: HalfEllipse, v: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     """
     Generatrix of a spherical product: `v` in [0, pi] -> `(cross_section_curve_scale, depth)`
 

@@ -1,4 +1,11 @@
-from hbdb_26.scene.heart import HeartGeometry, HeartPointGrid, HeartTriangleMesh
+from hbdb_26.scene.heart import (
+    HeartGeometry,
+    HeartPointCloud,
+    HeartPointGrid,
+    HeartPolyhedron,
+    HeartTriangleMesh,
+    HeartVoxelGrid,
+)
 from hbdb_26.scene.heart_equation import (
     JULIA_CURVE,
     TAUBIN_SURFACE,
@@ -17,8 +24,11 @@ __all__ = [
     "HalfEllipse",
     "HeartEquation",
     "HeartGeometry",
+    "HeartPointCloud",
     "HeartPointGrid",
+    "HeartPolyhedron",
     "HeartTriangleMesh",
+    "HeartVoxelGrid",
     "ImplicitSurface3D",
     "MarchingCubesParameter",
     "ParametricCurve2D",

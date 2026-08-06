@@ -8,8 +8,8 @@ class JuliaConfig:
     v_samples: the number of samples along v in [0, pi]
     """
 
-    u_samples: int = 100
-    v_samples: int = 100
+    u_samples: int = 101
+    v_samples: int = 101
 
 
 @dataclass(frozen=True)

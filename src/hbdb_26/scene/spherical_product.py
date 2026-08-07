@@ -30,7 +30,7 @@ def form_spherical_product(
     v = np.linspace(0, np.pi, spherical_product_parameter.v_samples)
 
     # u -> cross-section curve, v -> generatrix (1D each, no grid yet)
-    cross_section_curve_x, cross_section_curve_z = heart_equation.formula(u)
+    cross_section_curve_x, cross_section_curve_z = heart_equation.compute(u)
     cross_section_curve_scale, depth = compute_half_ellipse(
         spherical_product_parameter.generatrix, v
     )

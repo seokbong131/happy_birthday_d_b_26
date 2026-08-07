@@ -31,7 +31,7 @@ def extract_isosurface(
 
     # index [i, j, k] aligned with (x, y, z); default: "xy" indexing
     x, y, z = np.meshgrid(axis, axis, axis, indexing="ij")
-    scalar_field_volume = heart_equation.formula(x, y, z)
+    scalar_field_volume = heart_equation.evaluate(x, y, z)
 
     # actual distance between adjacent samples
     voxel_size = 2 * grid_bound / (resolution - 1)

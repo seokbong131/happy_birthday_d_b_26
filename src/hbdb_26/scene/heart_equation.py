@@ -14,7 +14,7 @@ class ParametricCurve2D:
     `t` in [0, 2 * pi] -> `(x, z)` (a closed curve on the XZ plane)
     """
 
-    formula: Callable[[np.ndarray], tuple[np.ndarray, np.ndarray]]
+    compute: Callable[[np.ndarray], tuple[np.ndarray, np.ndarray]]
 
 
 @dataclass(frozen=True)
@@ -23,7 +23,7 @@ class ImplicitSurface3D:
     `(x, y, z)` -> `f` (f = 0 => surface, f < 0 => inside)
     """
 
-    formula: Callable[[np.ndarray, np.ndarray, np.ndarray], np.ndarray]
+    evaluate: Callable[[np.ndarray, np.ndarray, np.ndarray], np.ndarray]
 
 
 JULIA_CURVE = ParametricCurve2D(julia.compute_heart_curve)

@@ -15,7 +15,7 @@ def i_love_d_b() -> None:
     for index, heart_object in enumerate(HEART_REGISTRY, start=1):
         axes_3d = figure.add_subplot(rows, cols, index, projection="3d")
 
-        heart_geometry = heart_object.make()
+        heart_geometry = heart_object.discretize(heart_object.equation, heart_object.parameter)
         visualize_heart(axes_3d=axes_3d, heart_geometry=heart_geometry)
 
     # display

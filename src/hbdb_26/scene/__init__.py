@@ -13,7 +13,6 @@ from hbdb_26.scene.heart_equation import (
     ImplicitSurface3D,
     ParametricCurve2D,
 )
-from hbdb_26.scene.heart_maker import make_julia_heart, make_taubin_heart
 from hbdb_26.scene.marching_cubes import extract_isosurface
 from hbdb_26.scene.parameter import HalfEllipse, MarchingCubesParameter, SphericalProductParameter
 from hbdb_26.scene.spherical_product import form_spherical_product
@@ -35,6 +34,4 @@ __all__ = [
     "SphericalProductParameter",
     "extract_isosurface",
     "form_spherical_product",
-    "make_julia_heart",
-    "make_taubin_heart",
 ]

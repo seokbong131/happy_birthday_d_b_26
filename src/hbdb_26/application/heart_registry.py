@@ -12,6 +12,7 @@ from hbdb_26.scene import (
     extract_isosurface,
     form_spherical_product,
 )
+from hbdb_26.visualizer import RenderMode
 
 
 @dataclass(frozen=True, kw_only=True)
@@ -23,12 +24,14 @@ class HeartObject[HeartParameter]:
     - `equation`: heart parametric curve or heart implicit surface
     - `parameter`: settings of discretization
     - `discretize`: `{equation, parameter}` -> geometry
+    - `render_mode`: how to draw a point grid (`None` for any other geometry)
     """
 
     name: str
     equation: HeartEquation
     parameter: HeartParameter
     discretize: Callable[[HeartEquation, HeartParameter], HeartGeometry]
+    render_mode: RenderMode | None
 
 
 HEART_REGISTRY: tuple[HeartObject, ...] = (
@@ -41,6 +44,7 @@ HEART_REGISTRY: tuple[HeartObject, ...] = (
             v_samples=101,
         ),
         discretize=form_spherical_product,
+        render_mode=RenderMode.FILL,
     ),
     HeartObject(
         name="taubin",
@@ -51,5 +55,6 @@ HEART_REGISTRY: tuple[HeartObject, ...] = (
             resolution=100,
         ),
         discretize=extract_isosurface,
+        render_mode=None,
     ),
 )

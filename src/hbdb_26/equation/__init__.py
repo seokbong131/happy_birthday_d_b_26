@@ -1,7 +1,6 @@
-from hbdb_26.equation.julia import compute_heart_coordinates
-from hbdb_26.equation.taubin import evaluate_heart_implicit_function
+"""
+Empty on purpose.
 
-__all__ = [
-    "compute_heart_coordinates",
-    "evaluate_heart_implicit_function",
-]
+Nothing is re-exported here,
+so that equation modules are free to share a function name.
+"""

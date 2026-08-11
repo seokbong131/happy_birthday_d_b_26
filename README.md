@@ -50,8 +50,7 @@ happy_birthday_d_b_26/
 │   └── hbdb_26/
 │       ├── application/    # composition root (dependency injection)
 │       ├── equation/       # heart curve & surface definition
-│       ├── scene/          # discretized heart geometry & object
-│       ├── util/           # TBD
+│       ├── scene/          # discretization (equation -> geometry)
 │       └── visualizer/     # matplotlib-based plotting
 └── main.py                 # entry point (PyInstaller analysis script)
 ```

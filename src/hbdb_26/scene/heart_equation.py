@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from hbdb_26.equation import julia, taubin
+from hbdb_26.equation import julia, kuska, mangaldan, standard, taubin
 
 type HeartEquation = ParametricCurve2D | ImplicitSurface3D
 
@@ -27,4 +27,8 @@ class ImplicitSurface3D:
 
 
 JULIA_CURVE = ParametricCurve2D(julia.compute_heart_curve)
+MANGALDAN_CURVE = ParametricCurve2D(mangaldan.compute_heart_curve)
+STANDARD_CURVE = ParametricCurve2D(standard.compute_heart_curve)
+
+KUSKA_SURFACE = ImplicitSurface3D(kuska.evaluate_heart_implicit_function)
 TAUBIN_SURFACE = ImplicitSurface3D(taubin.evaluate_heart_implicit_function)

@@ -8,6 +8,9 @@ from hbdb_26.scene.heart import (
 )
 from hbdb_26.scene.heart_equation import (
     JULIA_CURVE,
+    KUSKA_SURFACE,
+    MANGALDAN_CURVE,
+    STANDARD_CURVE,
     TAUBIN_SURFACE,
     HeartEquation,
     ImplicitSurface3D,
@@ -19,6 +22,9 @@ from hbdb_26.scene.spherical_product import form_spherical_product
 
 __all__ = [
     "JULIA_CURVE",
+    "KUSKA_SURFACE",
+    "MANGALDAN_CURVE",
+    "STANDARD_CURVE",
     "TAUBIN_SURFACE",
     "HalfEllipse",
     "HeartEquation",

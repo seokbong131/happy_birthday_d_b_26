@@ -48,6 +48,32 @@ class HalfEllipse:
             raise ValueError(f"half_depth must be positive. (half_depth: {self.half_depth})")
 
 
+_MINIMUM_HALF_ANGLE = 15.0
+_MAXIMUM_HALF_ANGLE = 56.3  # arctan(3 / 2) in degrees, rounded down
+
+
+@dataclass(frozen=True)
+class Teardrop:
+    """
+    - `half_angle`: half of the angle at the lower vertex (degrees)
+    """
+
+    half_angle: float
+
+    def __post_init__(self) -> None:
+        if self.half_angle < _MINIMUM_HALF_ANGLE:
+            raise ValueError(
+                f"half_angle must be at least {_MINIMUM_HALF_ANGLE} degrees. "
+                f"(half_angle: {self.half_angle})"
+            )
+
+        if self.half_angle > _MAXIMUM_HALF_ANGLE:
+            raise ValueError(
+                f"half_angle must be at most {_MAXIMUM_HALF_ANGLE} degrees. "
+                f"(half_angle: {self.half_angle})"
+            )
+
+
 @dataclass(frozen=True, kw_only=True)
 class SphericalProductParameter:
     """

@@ -3,12 +3,14 @@ from dataclasses import dataclass
 
 from hbdb_26.scene import (
     JULIA_CURVE,
+    STANDARD_CURVE,
     TAUBIN_SURFACE,
     HalfEllipse,
     HeartEquation,
     HeartGeometry,
     MarchingCubesParameter,
     SphericalProductParameter,
+    Teardrop,
     extract_isosurface,
     form_spherical_product,
 )
@@ -57,5 +59,18 @@ HEART_REGISTRY: tuple[HeartObject, ...] = (
         ),
         discretize=extract_isosurface,
         render_mode=None,
+    ),
+    HeartObject(
+        name="wireframe",
+        equation=STANDARD_CURVE,
+        parameter=SphericalProductParameter(
+            generatrix=HalfEllipse(cross_section_curve_scale=1.0, half_depth=6.75),
+            taper=Teardrop(31.0),
+            # sparse grid for visible wireframe lines
+            u_samples=33,
+            v_samples=21,
+        ),
+        discretize=form_spherical_product,
+        render_mode=RenderMode.WIREFRAME,
     ),
 )

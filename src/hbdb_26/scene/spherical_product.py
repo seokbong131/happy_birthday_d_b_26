@@ -6,6 +6,7 @@ from hbdb_26.scene.generatrix import compute_half_ellipse
 from hbdb_26.scene.heart import HeartPointGrid
 from hbdb_26.scene.heart_equation import HeartEquation, ParametricCurve2D
 from hbdb_26.scene.parameter import SphericalProductParameter
+from hbdb_26.scene.taper import taper_depth
 
 
 def form_spherical_product(
@@ -15,7 +16,7 @@ def form_spherical_product(
     Spherical product of a cross-section curve and a generatrix: `(u, v)` -> `(x, y, z)`
 
     - `heart_equation`: cross-section curve scaled by the generatrix into each parallel
-    - `spherical_product_parameter`: generatrix and the number of samples along u and v
+    - `spherical_product_parameter`: generatrix, taper, and the number of samples along u and v
     """
 
     # heart equation is-a 2D parametric curve
@@ -40,4 +41,7 @@ def form_spherical_product(
     z = cross_section_curve_z[:, np.newaxis] * cross_section_curve_scale
     y = np.broadcast_to(depth, x.shape).copy()  # one generatrix depth per parallel
 
-    return HeartPointGrid(x=x, y=y, z=z)
+    heart_point_grid = HeartPointGrid(x=x, y=y, z=z)
+    taper = spherical_product_parameter.taper
+
+    return heart_point_grid if taper is None else taper_depth(heart_point_grid, taper)

@@ -57,10 +57,14 @@ happy_birthday_d_b_26/
 
 ## ◦ Reference
 
+- [Cross section (geometry) (Wikipedia)](<https://en.wikipedia.org/wiki/Cross_section_(geometry)>)
+- [Cubic Hermite spline (Wikipedia)](https://en.wikipedia.org/wiki/Cubic_Hermite_spline)
 - [Dependency injection (Wikipedia)](https://en.wikipedia.org/wiki/Dependency_injection)
 - [Heart Curve (Wolfram MathWorld)](https://mathworld.wolfram.com/HeartCurve.html)
 - [Heart Surface (Wolfram MathWorld)](https://mathworld.wolfram.com/HeartSurface.html)
 - [Love heart jewelry I: 3D printing of parametric region (Wolfram Community)](https://community.wolfram.com/groups/-/m/t/2142619)
 - [Matplotlib — Visualization with Python](https://matplotlib.org/)
+- [Piecewise function (Wikipedia)](https://en.wikipedia.org/wiki/Piecewise_function)
 - [RE: Drawing a Heart in Mathematica? (Wolfram)](https://forums.wolfram.com/mathgroup/archive/2004/Feb/msg00303.html)
 - [Superquadrics and Angle-Preserving Transformations (IEEE CG&A, 1981)](https://www.cs.bilkent.edu.tr/~gudukbay/cs465/super_quadrics.pdf)
+- [Tapering (mathematics) (Wikipedia)](<https://en.wikipedia.org/wiki/Tapering_(mathematics)>)

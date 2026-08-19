@@ -40,6 +40,7 @@ HEART_REGISTRY: tuple[HeartObject, ...] = (
         equation=JULIA_CURVE,
         parameter=SphericalProductParameter(
             generatrix=HalfEllipse(cross_section_curve_scale=1.0, half_depth=8.0),
+            taper=None,
             u_samples=101,
             v_samples=101,
         ),

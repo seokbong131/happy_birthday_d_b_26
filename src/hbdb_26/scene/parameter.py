@@ -78,11 +78,13 @@ class Teardrop:
 class SphericalProductParameter:
     """
     - `generatrix`: curve giving the cross-section curve its scale and depth at each v
+    - `taper`: teardrop scaling the depth (`None` for an untapered spherical product)
     - `u_samples`: number of samples along u in [0, 2 * pi]
     - `v_samples`: number of samples along v in [0, pi]
     """
 
     generatrix: HalfEllipse
+    taper: Teardrop | None
     u_samples: int
     v_samples: int
 

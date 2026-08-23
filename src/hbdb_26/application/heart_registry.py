@@ -53,8 +53,8 @@ HEART_REGISTRY: tuple[HeartObject, ...] = (
         name="taubin",
         equation=TAUBIN_SURFACE,
         parameter=MarchingCubesParameter(
-            grid_bound=1.5,  # approximately, x in [-1.2, 1.2] & y in [-0.8, 0.8] & z in [-1, 1.3]
-            iso_level=0.0,
+            grid_bound=1.5,  # bounding box: x in [-1.2, 1.2] & y in [-0.8, 0.8] & z in [-1.0, 1.3]
+            iso_value=0.0,
             resolution=100,
         ),
         discretize=extract_isosurface,

@@ -6,13 +6,13 @@ from dataclasses import dataclass
 @dataclass(frozen=True, kw_only=True)
 class MarchingCubesParameter:
     """
-    - `grid_bound`: half-extent of the voxel grid to evaluate ([-bound, bound]^3)
-    - `iso_level`: threshold value treated as the surface (0.0 => zero set)
-    - `resolution`: number of samples along each axis of the voxel grid
+    - `grid_bound`: half of the sampling grid's edge length ([-grid_bound, grid_bound]^3)
+    - `iso_value`: scalar value of the isosurface (0.0 => zero set)
+    - `resolution`: number of samples along each axis
     """
 
     grid_bound: float
-    iso_level: float
+    iso_value: float
     resolution: int
 
     def __post_init__(self) -> None:

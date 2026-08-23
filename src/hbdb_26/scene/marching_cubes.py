@@ -10,10 +10,10 @@ def extract_isosurface(
     heart_equation: HeartEquation, marching_cubes_parameter: MarchingCubesParameter
 ) -> HeartTriangleMesh:
     """
-    Zero set of a 3D implicit function taken as it is: `f = 0` -> `(vertices, faces)`
+    Isosurface of a 3D implicit function taken as it is: `f = iso_value` -> `(vertices, faces)`
 
-    - `heart_equation`: implicit function evaluated at every sample of the voxel grid
-    - `marching_cubes_parameter`: grid bound, iso level, and resolution of the voxel grid
+    - `heart_equation`: implicit function evaluated at every grid point
+    - `marching_cubes_parameter`: grid bound, iso-value, and resolution of the sampling grid
     """
 
     # heart equation is-a 3D implicit surface
@@ -33,14 +33,14 @@ def extract_isosurface(
     x, y, z = np.meshgrid(axis, axis, axis, indexing="ij")
     scalar_field_volume = heart_equation.evaluate(x, y, z)
 
-    # actual distance between adjacent samples
-    voxel_size = 2 * grid_bound / (resolution - 1)
+    # distance between adjacent grid points, the edge length of one cube
+    sample_spacing = 2 * grid_bound / (resolution - 1)
 
     # Extract a 2D surface mesh from a 3D volume.
     vertices, faces, _, _ = measure.marching_cubes(
         volume=scalar_field_volume,
-        level=marching_cubes_parameter.iso_level,
-        spacing=(voxel_size, voxel_size, voxel_size),
+        level=marching_cubes_parameter.iso_value,
+        spacing=(sample_spacing, sample_spacing, sample_spacing),
         allow_degenerate=False,
     )
 

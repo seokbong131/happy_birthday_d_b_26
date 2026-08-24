@@ -104,6 +104,10 @@ class SphericalProductParameter:
 
 # voxelization
 # --------------------------------------------------------------------------------------------------
+_MINIMUM_RESOLUTION = 2
+_MAXIMUM_RESOLUTION = 24  # reasonable grid to draw
+
+
 @dataclass(frozen=True, kw_only=True)
 class VoxelizationParameter:
     """
@@ -118,7 +122,14 @@ class VoxelizationParameter:
         if self.grid_bound <= 0:
             raise ValueError(f"grid_bound must be positive. (grid_bound: {self.grid_bound})")
 
-        if self.resolution < 2:
+        if self.resolution < _MINIMUM_RESOLUTION:
             raise ValueError(
-                f"resolution must be at least 2 per axis. (resolution: {self.resolution})"
+                f"resolution must be at least {_MINIMUM_RESOLUTION} per axis. "
+                f"(resolution: {self.resolution})"
+            )
+
+        if self.resolution > _MAXIMUM_RESOLUTION:
+            raise ValueError(
+                f"resolution must be at most {_MAXIMUM_RESOLUTION} per axis. "
+                f"(resolution: {self.resolution})"
             )

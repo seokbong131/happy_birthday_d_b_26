@@ -100,3 +100,25 @@ class SphericalProductParameter:
 
         if self.v_samples % 2 == 0:
             raise ValueError(f"v_samples must be odd. (v_samples: {self.v_samples})")
+
+
+# voxelization
+# --------------------------------------------------------------------------------------------------
+@dataclass(frozen=True, kw_only=True)
+class VoxelizationParameter:
+    """
+    - `grid_bound`: half of the voxel grid's edge length ([-grid_bound, grid_bound]^3)
+    - `resolution`: number of voxels along each axis
+    """
+
+    grid_bound: float
+    resolution: int
+
+    def __post_init__(self) -> None:
+        if self.grid_bound <= 0:
+            raise ValueError(f"grid_bound must be positive. (grid_bound: {self.grid_bound})")
+
+        if self.resolution < 2:
+            raise ValueError(
+                f"resolution must be at least 2 per axis. (resolution: {self.resolution})"
+            )

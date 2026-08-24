@@ -60,13 +60,13 @@ class HeartTriangleMesh:
 @dataclass(frozen=True, kw_only=True)
 class HeartVoxelGrid:
     """
-    Occupancy grid thresholded from an implicit surface equation.
+    Voxel grid extracted from an implicit surface equation.
 
-    - `filled`: 3D bool array, the indicator function of the strict sublevel set (f < 0)
-    - `grid_origin`: (3,) float array, the lowest corner of voxel [0, 0, 0] on all three axes
-    - `voxel_size`: grid spacing, the edge length of one cubic voxel
+    - `filled`: 3D bool array, indicator function of the strict sublevel set (f < 0)
+    - `origin`: (3,) float array, lower corner of the grid
+    - `spacing`: edge length of one cubic voxel
     """
 
     filled: np.ndarray
-    grid_origin: np.ndarray
-    voxel_size: float
+    origin: np.ndarray
+    spacing: float

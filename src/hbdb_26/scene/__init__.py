@@ -25,6 +25,7 @@ from hbdb_26.scene.parameter import (
     VoxelizationParameter,
 )
 from hbdb_26.scene.spherical_product import form_spherical_product
+from hbdb_26.scene.voxelization import extract_sublevel_set
 
 __all__ = [
     "JULIA_CURVE",
@@ -47,5 +48,6 @@ __all__ = [
     "Teardrop",
     "VoxelizationParameter",
     "extract_isosurface",
+    "extract_sublevel_set",
     "form_spherical_product",
 ]

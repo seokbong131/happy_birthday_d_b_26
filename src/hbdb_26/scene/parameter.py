@@ -89,8 +89,8 @@ class SphericalProductParameter:
     v_samples: int
 
     def __post_init__(self) -> None:
-        if self.u_samples < 4:
-            raise ValueError(f"u_samples must be at least 4. (u_samples: {self.u_samples})")
+        if self.u_samples < 5:
+            raise ValueError(f"u_samples must be at least 5. (u_samples: {self.u_samples})")
 
         if self.u_samples % 2 == 0:
             raise ValueError(f"u_samples must be odd. (u_samples: {self.u_samples})")

@@ -3,6 +3,7 @@ from dataclasses import dataclass
 
 from hbdb_26.scene import (
     JULIA_CURVE,
+    KUSKA_SURFACE,
     STANDARD_CURVE,
     TAUBIN_SURFACE,
     HalfEllipse,
@@ -11,7 +12,9 @@ from hbdb_26.scene import (
     MarchingCubesParameter,
     SphericalProductParameter,
     Teardrop,
+    VoxelizationParameter,
     extract_isosurface,
+    extract_sublevel_set,
     form_spherical_product,
 )
 from hbdb_26.visualizer import RenderMode
@@ -53,7 +56,8 @@ HEART_REGISTRY: tuple[HeartObject, ...] = (
         name="taubin",
         equation=TAUBIN_SURFACE,
         parameter=MarchingCubesParameter(
-            grid_bound=1.5,  # bounding box: x in [-1.2, 1.2] & y in [-0.8, 0.8] & z in [-1.0, 1.3]
+            # bounding box: x in [-1.2, 1.2] & y in [-0.8, 0.8] & z in [-1.0, 1.3]
+            grid_bound=1.5,
             iso_value=0.0,
             resolution=100,
         ),
@@ -72,5 +76,16 @@ HEART_REGISTRY: tuple[HeartObject, ...] = (
         ),
         discretize=form_spherical_product,
         render_mode=RenderMode.WIREFRAME,
+    ),
+    HeartObject(
+        name="voxel",
+        equation=KUSKA_SURFACE,
+        parameter=VoxelizationParameter(
+            # bounding box: x in [-1.140, 1.140] & y in [-0.720, 0.720] & z in [-1.000, 1.237]
+            grid_bound=1.3,
+            resolution=17,
+        ),
+        discretize=extract_sublevel_set,
+        render_mode=None,
     ),
 )

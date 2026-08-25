@@ -6,7 +6,7 @@ from dataclasses import dataclass
 @dataclass(frozen=True, kw_only=True)
 class MarchingCubesParameter:
     """
-    - `grid_bound`: half of the sampling grid's edge length ([-grid_bound, grid_bound]^3)
+    - `grid_bound`: half of the grid's edge length ([-grid_bound, grid_bound]^3)
     - `iso_value`: scalar value of the isosurface (0.0 => zero set)
     - `resolution`: number of samples along each axis
     """

@@ -13,7 +13,7 @@ def extract_isosurface(
     Isosurface of a 3D implicit function taken as it is: `f = iso_value` -> `(vertices, faces)`
 
     - `heart_equation`: implicit function evaluated at every grid point
-    - `marching_cubes_parameter`: grid bound, iso-value, and resolution of the sampling grid
+    - `marching_cubes_parameter`: grid bound, iso-value, and resolution of the grid
     """
 
     # heart equation is-a 3D implicit surface

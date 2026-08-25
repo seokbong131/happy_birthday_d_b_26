@@ -20,6 +20,7 @@ from hbdb_26.scene.marching_cubes import extract_isosurface
 from hbdb_26.scene.parameter import (
     HalfEllipse,
     MarchingCubesParameter,
+    SamplingParameter,
     SphericalProductParameter,
     Teardrop,
     VoxelizationParameter,
@@ -44,6 +45,7 @@ __all__ = [
     "ImplicitSurface3D",
     "MarchingCubesParameter",
     "ParametricCurve2D",
+    "SamplingParameter",
     "SphericalProductParameter",
     "Teardrop",
     "VoxelizationParameter",

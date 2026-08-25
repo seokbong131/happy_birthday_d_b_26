@@ -102,6 +102,28 @@ class SphericalProductParameter:
             raise ValueError(f"v_samples must be odd. (v_samples: {self.v_samples})")
 
 
+# sampling
+# --------------------------------------------------------------------------------------------------
+@dataclass(frozen=True, kw_only=True)
+class SamplingParameter:
+    """
+    - `point_count`: number of points in the point cloud
+    - `seed`: number initializing the pseudorandom number generator
+    - `spherical_product`: source surface of the point cloud
+    """
+
+    point_count: int
+    seed: int
+    spherical_product: SphericalProductParameter
+
+    def __post_init__(self) -> None:
+        if self.point_count < 1:
+            raise ValueError(f"point_count must be at least 1. (point_count: {self.point_count})")
+
+        if self.seed < 0:
+            raise ValueError(f"seed must be at least 0. (seed: {self.seed})")
+
+
 # voxelization
 # --------------------------------------------------------------------------------------------------
 _MINIMUM_RESOLUTION = 2
